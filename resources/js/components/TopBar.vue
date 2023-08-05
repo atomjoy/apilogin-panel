@@ -14,14 +14,11 @@ const user = auth.getUser
 	<div id="topbar-wrapper">
 		<RouterLink to="/" class="menu-link">{{ $t('page.Home') }}</RouterLink>
 		<RouterLink to="/about" class="menu-link">{{ $t('page.About') }}</RouterLink>
-		<!-- <RouterLink v-if="logged" to="/panel/profil" class="menu-link">{{ $t('page.Panel') }}</RouterLink>
-		<RouterLink v-if="logged" to="/logout" class="menu-link">{{ $t('page.Logout') }}</RouterLink>
-		<RouterLink v-if="!logged" to="/login" class="menu-link">{{ $t('page.Login') }}</RouterLink>
-		<RouterLink to="/error404" class="menu-link">404</RouterLink> -->
+
 		<div class="right">
 			<ChangeLocale />
 			<ChangeTheme />
-			<ProfilMenu :logged="logged" :profil="true" :name="user?.name" :email="user?.email" :avatar="user?.image" />
+			<ProfilMenu :logged="logged" :profil="true" :name="user?.name" :email="user?.email" :avatar="user?.profile?.avatar" />
 		</div>
 	</div>
 </template>
