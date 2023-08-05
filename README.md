@@ -26,7 +26,7 @@ php artisan serve --host=localhost --port=8000
 
 ## Translations
 
-If translations has not been loaded automaticaly
+If the translations were not loaded automatically
 
 ```sh
 # create app/lang translations
@@ -41,4 +41,7 @@ Then copy apilogin/lang dir to laravel app/lang dir
 ```sh
 # tests
 php artisan test --stop-on-failure --testsuite=Apilogin
+
+# seeder
+php artisan db:seed --class=ApiloginSeeder
 ```
