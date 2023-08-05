@@ -6,7 +6,6 @@ import Input from '@/components/input/Input.vue'
 import Button from '@/components/input/Button.vue'
 import Select from '@/components/input/Select.vue'
 import SelectPrefix from '@/components/input/SelectPrefix.vue'
-import UtilsDemoView from '@/atomjoy/UtilsDemoView.vue'
 
 let email = ref('')
 let country = ref(48)
@@ -21,8 +20,6 @@ let name = ref('Ala')
 	<h1>{{ $t('page.Home') }}</h1>
 
 	<div class="home-form">
-		<!-- <UtilsDemoView /> -->
-
 		<form @submit.prevent="">
 			<Input name="email" v-model="email" :label="$t('login.Email_address')" placeholder="Email address" />
 
