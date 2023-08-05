@@ -1,0 +1,10 @@
+@import './base.css';
+
+/* page style */
+
+h1 {
+	float: left;
+	width: 100%;
+	text-align: center;
+	font-size: 2.5rem;
+}

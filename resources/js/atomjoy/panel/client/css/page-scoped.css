@@ -1,0 +1,7 @@
+form {
+	float: left;
+	width: 100%;
+	max-width: 100% !important;
+	padding-bottom: 30px;
+	border-bottom: 1px dashed var(--divider-primary);
+}

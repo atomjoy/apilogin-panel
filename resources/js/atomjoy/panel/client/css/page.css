@@ -1,0 +1,3 @@
+.label-color .input-group label {
+	color: var(--label-primary) !important;
+}
