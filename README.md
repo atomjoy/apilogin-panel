@@ -31,7 +31,7 @@ php artisan serve --host=localhost --port=8000
 
 ## Translations
 
-If the translations were not loaded automatically
+If the translations were not loaded automatically.
 
 ```sh
 # create app/lang translations
@@ -49,6 +49,50 @@ php artisan test --stop-on-failure --testsuite=Apilogin
 
 # seeder
 php artisan db:seed --class=ApiloginSeeder
+```
+
+## Database
+
+Database and user configuration.
+
+### Create mysql database
+
+```sql
+CREATE DATABASE IF NOT EXISTS laravel CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS laravel_testing CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+### Create mysql user password
+
+```sql
+GRANT ALL PRIVILEGES ON *.* TO root@localhost IDENTIFIED BY 'toor' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO root@127.0.0.1 IDENTIFIED BY 'toor' WITH GRANT OPTION;
+```
+
+### Settings
+
+```sh
+# .env
+APP_ENV=local
+APP_DEBUG=false
+
+# Mysql settings
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=toor
+
+# Smtp (etc. gmail, mailgun or localhost)
+MAIL_MAILER=smtp
+MAIL_HOST=localhost
+MAIL_PORT=25
+MAIL_USERNAME=
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=
+MAIL_FROM_ADDRESS="hello@local.host"
+MAIL_FROM_NAME="${APP_NAME}"
 ```
 
 ## Screens
