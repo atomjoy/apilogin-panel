@@ -4,6 +4,8 @@ Vue3 minimal client panel with Laravel backend rest api (client profil, address,
 
 ## Install
 
+Set the database and smtp server credentials in the .env configuration file.
+
 ```sh
 # db tables
 php artisan migrate:fresh
@@ -22,6 +24,9 @@ npm run build
 
 # run server
 php artisan serve --host=localhost --port=8000
+
+# Go to the registration page from your browser, create an account, then confirm your email address and log in.
+<http://localhost:8000/register>
 ```
 
 ## Translations
