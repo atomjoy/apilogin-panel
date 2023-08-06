@@ -53,5 +53,5 @@ php artisan db:seed --class=ApiloginSeeder
 
 ## Screens
 
-<img src="<https://raw.githubusercontent.com/atomjoy/apilogin-panel/main/screenshots/apilogin-panel-white.png>" width="100%">
-<img src="<https://raw.githubusercontent.com/atomjoy/apilogin-panel/main/screenshots/apilogin-panel-dark.png>" width="100%">
+<img src="https://raw.githubusercontent.com/atomjoy/apilogin-panel/main/screenshots/apilogin-panel-white.png" width="100%">
+<img src="https://raw.githubusercontent.com/atomjoy/apilogin-panel/main/screenshots/apilogin-panel-dark.png" width="100%">
