@@ -6,6 +6,7 @@ import Input from '@/components/input/Input.vue'
 import Button from '@/components/input/Button.vue'
 import Select from '@/components/input/Select.vue'
 import SelectPrefix from '@/components/input/SelectPrefix.vue'
+import AvatarInput from '@/components/input/AvatarInput.vue'
 
 let email = ref('')
 let country = ref(48)
@@ -21,6 +22,8 @@ let name = ref('Ala')
 
 	<div class="home-form">
 		<form @submit.prevent="">
+			<AvatarInput :avatar="'https://i.pravatar.cc/128'" :label="$t('Avatar')" />
+
 			<Input name="email" v-model="email" :label="$t('login.Email_address')" placeholder="Email address" />
 
 			<SelectPrefix name="prefix" v-model="country" :label="$t('register.Prefix')" />

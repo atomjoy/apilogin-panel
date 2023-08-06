@@ -16,6 +16,14 @@ const avatar_path = ref(null)
 
 if (props.avatar) {
 	avatar_path.value = '/storage/' + props.avatar
+
+	if (props.avatar.toLowerCase().startsWith('http://')) {
+		avatar_path.value = props.avatar
+	}
+
+	if (props.avatar.toLowerCase().startsWith('https://')) {
+		avatar_path.value = props.avatar
+	}
 } else {
 	avatar_path.value = avatar_default
 }
