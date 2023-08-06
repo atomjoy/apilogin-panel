@@ -5,20 +5,14 @@ import { onBeforeMount, onMounted, ref } from 'vue'
 
 const auth = useAuthStore()
 const user = auth.getUser
-console.log(user)
 
 onBeforeMount(() => {
 	auth.clearError()
 })
 
 function onFilter(e) {
-	let data = new FormData(e.target)
-	for (var pair of data.entries()) {
-		console.log('Input key:', pair[0], 'Value:', pair[1])
-	}
-	// axios request here send to server
-	// auth.filterOrders(data)
-	// auth.scrollTop()
+	auth.scrollTop()
+	auth.filterOrders(new FormData(e.target))
 }
 </script>
 

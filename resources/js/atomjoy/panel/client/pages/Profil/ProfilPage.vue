@@ -7,27 +7,18 @@ import TitleH1 from '@/atomjoy/panel/client/components/Titles/TitleH1.vue'
 import TitleH2 from '@/atomjoy/panel/client/components/Titles/TitleH2.vue'
 import ErrorMessage from '@/atomjoy/panel/client/components/Error/ErrorMessage.vue'
 import { useAuthStore } from '@/atomjoy/auth/stores/auth.js'
-import { onBeforeMount, onMounted, ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 
 const auth = useAuthStore()
 const user = auth.getUser
-console.log(user)
-
 const avatar_path = ref(user.value.profile.avatar)
 
 onBeforeMount(() => {
 	auth.clearError()
 })
 
-// https://i.pravatar.cc/128
-
 function onSubmitAvatar(e) {
-	let data = new FormData(e.target)
-	// for (var pair of data.entries()) {
-	// 	console.log('Input key:', pair[0], 'Value:', pair[1])
-	// }
-	// axios request here send to server
-	auth.changeUserAvatar(data)
+	auth.changeUserAvatar(new FormData(e.target))
 	auth.scrollTop()
 }
 
@@ -70,3 +61,5 @@ function onSubmitDetails(e) {
 <style scoped>
 @import url('../../css/page-scoped.css');
 </style>
+
+<!-- Random avatar https://i.pravatar.cc/128 -->

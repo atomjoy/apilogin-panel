@@ -5,7 +5,7 @@ import TitleH1 from '@/atomjoy/panel/client/components/Titles/TitleH1.vue'
 import TitleH2 from '@/atomjoy/panel/client/components/Titles/TitleH2.vue'
 import ErrorMessage from '@/atomjoy/panel/client/components/Error/ErrorMessage.vue'
 import { useAuthStore } from '@/atomjoy/auth/stores/auth.js'
-import { onBeforeMount, onMounted, ref } from 'vue'
+import { onBeforeMount } from 'vue'
 
 const auth = useAuthStore()
 let password = ref('')
