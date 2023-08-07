@@ -47,7 +47,7 @@ function onSubmit(e) {
 			</div>
 
 			<div class="form-wraper">
-				<form @submit.prevent="onSubmit" class="form-auth">
+				<form @submit.prevent="onSubmit" class="form-auth" id="registerForm">
 					<h1 class="full">
 						{{ $t('register.Sign_Up') }}
 					</h1>

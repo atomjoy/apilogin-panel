@@ -40,6 +40,7 @@ export const useAuthStore = defineStore('auth', () => {
 		try {
 			let res = await axios.post('/web/api/register', data)
 			setMessage(res)
+			document.getElementById('registerForm').reset()
 		} catch (err) {
 			setError(err)
 			logError(err)

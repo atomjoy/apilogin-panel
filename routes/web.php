@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 // Laravel
 
-Route::get('/login', function () {
-	return view('vue');
-})->name('login');
+// Route::get('/login', function () {
+// 	return view('vue');
+// })->name('login');
 
 // Vue
 
@@ -25,5 +25,5 @@ if (!app()->runningUnitTests()) {
 	// Vue catch all
 	Route::fallback(function () {
 		return view('vue');
-	});
+	})->name('login');
 }
