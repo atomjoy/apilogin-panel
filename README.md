@@ -7,6 +7,10 @@ Vue3 minimal client panel with Laravel backend rest api (client profil, address,
 Set the database and smtp server credentials in the .env configuration file.
 
 ```sh
+# notifications, storage
+php artisan notifications:table
+php artisan storage:link
+
 # db tables
 php artisan migrate:fresh
 php artisan migrate:fresh --env=testing

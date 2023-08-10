@@ -14,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Laravel
+require 'demo/notifications.php';
 
-// Route::get('/login', function () {
-// 	return view('vue');
-// })->name('login');
+Route::get('/', function () {
+	return view('vue');
+});
 
 // Vue
 
