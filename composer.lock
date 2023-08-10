@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "atomjoy/apilogin",
-            "version": "v3.1",
+            "version": "v3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/atomjoy/apilogin.git",
-                "reference": "63e8a5be13fd803503ea894edbd6ab3f91e8a706"
+                "reference": "fe895060d94eb56fb8cda9d6d222a60db7c0e3bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/atomjoy/apilogin/zipball/63e8a5be13fd803503ea894edbd6ab3f91e8a706",
-                "reference": "63e8a5be13fd803503ea894edbd6ab3f91e8a706",
+                "url": "https://api.github.com/repos/atomjoy/apilogin/zipball/fe895060d94eb56fb8cda9d6d222a60db7c0e3bc",
+                "reference": "fe895060d94eb56fb8cda9d6d222a60db7c0e3bc",
                 "shasum": ""
             },
             "require": {
@@ -57,9 +57,9 @@
             "description": "Laravel api authentication library.",
             "support": {
                 "issues": "https://github.com/atomjoy/apilogin/issues",
-                "source": "https://github.com/atomjoy/apilogin/tree/v3.1"
+                "source": "https://github.com/atomjoy/apilogin/tree/v3.2"
             },
-            "time": "2023-08-10T11:11:54+00:00"
+            "time": "2023-08-10T16:24:01+00:00"
         },
         {
             "name": "atomjoy/proton",

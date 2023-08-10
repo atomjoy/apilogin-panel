@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Laravel
-require 'demo/notifications.php';
+
+// require 'demo/notifications.php';
 
 Route::get('/', function () {
 	return view('vue');
