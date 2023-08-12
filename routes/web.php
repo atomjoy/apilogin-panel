@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use Atomjoy\Apilogin\Notifications\Contracts\NotifyMessage;
+use Atomjoy\Apilogin\Notifications\DbNotify;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +21,19 @@ use Illuminate\Support\Facades\Route;
 // require 'demo/notifications.php';
 
 Route::get('/', function () {
+
+	$msg = new NotifyMessage();
+	$msg->setContent('Hello max your links from us.');
+	$msg->setLink('order', 'https://example.com/signup', 'Last Order');
+	$msg->setLink('promo', 'https://example.com/signin', 'Promotions');
+
+	$msg1 = new NotifyMessage();
+	$msg1->setContent('Witaj! Twoja aplikacja została zaakceptowana. Zapraszamy na stronę sklepu.');
+
+	$user = User::first();
+	$user->notify(new DbNotify($msg));
+	$user->notifyNow(new DbNotify($msg1));
+
 	return view('vue');
 });
 

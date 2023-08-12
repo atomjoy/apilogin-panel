@@ -1,0 +1,21 @@
+.scrollbar {
+	float: left;
+	width: 100%;
+	height: auto;
+	min-height: calc(100% - 40px);
+	max-height: calc(100% - 40px);
+	padding-right: 10px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	scrollbar-width: thin;
+	scrollbar-color: var(--accent-secondary) var(--bg-secondary);
+}
+
+.scrollbar::-webkit-scrollbar {
+	width: 8px;
+	background: var(--bg-secondary);
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+	background: var(--accent-secondary);
+}

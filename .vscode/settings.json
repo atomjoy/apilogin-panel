@@ -108,11 +108,13 @@
 	"intelephense.diagnostics.undefinedMethods": false,
 	"intelephense.environment.phpVersion": "8.2.0",
 	"workbench.startupEditor": "none",
-	"workbench.colorTheme": "Bearded Theme Light",
+	"workbench.colorTheme": "Bearded Theme Oceanic",
 	"explorer.confirmDragAndDrop": false,
 
 	"files.associations": {
 		"*.env": "properties",
 		"*.env.*": "properties"
-	}
+	},
+
+	"vue.codeLens.enabled": false
 }
