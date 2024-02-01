@@ -26,6 +26,13 @@ const routes = [
 		name: 'logout',
 		component: () => import('@/atomjoy/auth/LogoutView.vue'),
 	},
+	// Two factor
+	{
+		path: '/login/f2a/:hash',
+		name: 'login.f2a',
+		component: () => import('@/atomjoy/auth/LoginF2aView.vue'),
+		meta: { requiresAuth: false },
+	},
 	// Logged only
 	{
 		path: '/password-change',

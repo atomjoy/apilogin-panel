@@ -59,7 +59,24 @@ export const useAuthStore = defineStore('auth', () => {
 
 	async function loginUser(data) {
 		try {
+			console.log('Login data', data)
 			let res = await axios.post('/web/api/login', data)
+			// F2a redirect
+			if (res?.data?.redirect != null) {
+				router.push(res?.data?.redirect) // redirection url
+			}
+			// Just login
+			setAuth(res)
+			router.push('/client/panel') // redirection url
+		} catch (err) {
+			delAuth(err)
+			logError(err)
+		}
+	}
+
+	async function loginUserF2a(data) {
+		try {
+			let res = await axios.post('/web/api/f2a', data)
 			setAuth(res)
 			router.push('/client/panel') // redirection url
 		} catch (err) {
@@ -170,7 +187,7 @@ export const useAuthStore = defineStore('auth', () => {
 
 	function setAuth(res, show_message = true) {
 		user.value = res?.data?.user ?? null
-		if (user.value.id && user.value.email) {
+		if (user.value?.id && user.value?.email) {
 			loggedIn.value = true
 			if (show_message) {
 				message.value = res?.data?.message ?? ''
@@ -238,6 +255,7 @@ export const useAuthStore = defineStore('auth', () => {
 		registerUser,
 		activateUser,
 		loginUser,
+		loginUserF2a,
 		logoutUser,
 		changeUserPassword,
 		resetUserPassword,

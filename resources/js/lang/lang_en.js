@@ -12,6 +12,7 @@ const en = {
 		password_title: 'Reset Your password',
 		change_password_title: 'Change password',
 		change_email_title: 'Confirm email',
+		login_f2a_title: 'Confirm login code',
 	},
 	page: {
 		Home: 'Homepage',
@@ -65,6 +66,9 @@ const en = {
 		Password_eg: 'Your password',
 		Forgot_password: 'Forgot password?',
 		Dont_have_an_account: "Don't have an account?",
+		F2a_Confirm: 'Code confirmation',
+		F2a_code: 'Your confirmation code',
+		F2a_code_eg: 'Enter code',
 	},
 	register: {
 		Register: 'Register',

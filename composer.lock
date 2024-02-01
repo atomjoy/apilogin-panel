@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "925662355b473f8cebdbc600a9e7b346",
+    "content-hash": "144d288958230f34f877ecc0d79d1a9e",
     "packages": [
         {
             "name": "atomjoy/apilogin",
-            "version": "v4.2",
+            "version": "v4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/atomjoy/apilogin.git",
-                "reference": "79d3beee6eeb326a855c823ecf0c4737f6ca9d8b"
+                "reference": "532cf187feef321366a66f21a47036604d6c4b10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/atomjoy/apilogin/zipball/79d3beee6eeb326a855c823ecf0c4737f6ca9d8b",
-                "reference": "79d3beee6eeb326a855c823ecf0c4737f6ca9d8b",
+                "url": "https://api.github.com/repos/atomjoy/apilogin/zipball/532cf187feef321366a66f21a47036604d6c4b10",
+                "reference": "532cf187feef321366a66f21a47036604d6c4b10",
                 "shasum": ""
             },
             "require": {
@@ -57,9 +57,9 @@
             "description": "Laravel api authentication library.",
             "support": {
                 "issues": "https://github.com/atomjoy/apilogin/issues",
-                "source": "https://github.com/atomjoy/apilogin/tree/v4.2"
+                "source": "https://github.com/atomjoy/apilogin/tree/v4.3"
             },
-            "time": "2024-02-01T17:07:52+00:00"
+            "time": "2024-02-01T19:26:29+00:00"
         },
         {
             "name": "atomjoy/proton",

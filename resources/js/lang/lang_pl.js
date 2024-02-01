@@ -11,6 +11,7 @@ const pl = {
 		activate_title: 'Aktywacja konta',
 		password_title: 'Resetuj hasło',
 		change_password_title: 'Zmiana hasła',
+		login_f2a_title: 'Podaj kod logowania',
 	},
 	page: {
 		Home: 'Strona Główna',
@@ -64,6 +65,9 @@ const pl = {
 		Password_eg: 'Podaj hasło',
 		Forgot_password: 'Nie pamietasz hasła?',
 		Dont_have_an_account: 'Nie masz konta?',
+		F2a_Confirm: 'Potwierdzenie kodu',
+		F2a_code: 'Twój kod',
+		F2a_code_eg: 'Podaj kod',
 	},
 	register: {
 		Register: 'Utwórz Konto',
