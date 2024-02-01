@@ -50,6 +50,7 @@ router.beforeEach(async (to, from, next) => {
 	await auth.isAuthenticated()
 	// ✅ Redirect to panel if logged
 	if (to.name == 'login' && auth.isLoggedIn.value) {
+		// Panel route name here: panel or client.panel
 		next({ name: 'panel' })
 	} else if (to.meta.requiresAuth && !auth.isLoggedIn.value) {
 		// ✅ Redirect to login if not logged

@@ -99,6 +99,16 @@ MAIL_PASSWORD=
 MAIL_ENCRYPTION=
 MAIL_FROM_ADDRESS="hello@local.host"
 MAIL_FROM_NAME="${APP_NAME}"
+
+# Gmail smtp
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=atomjoy.official@gmail.com
+MAIL_PASSWORD=
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="atomjoy.official@gmail.com"
+MAIL_FROM_NAME="${APP_NAME}"
 ```
 
 ## Screens

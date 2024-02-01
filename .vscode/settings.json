@@ -1,15 +1,19 @@
 {
-	// update
-	"update.mode": "manual",
+	// GTK Remove Bar (set manualy from settings)
+	"window.titleBarStyle": "custom",
+
+	// GTK Disable open folder file popup
+	"files.simpleDialog.enable": true,
 
 	// Disable git
 	"git.enabled": false,
 
 	// Php
-	"php.validate.executablePath": "C:/xampp/php/php.exe",
+	// "php.validate.executablePath": "C:/xampp/php/php.exe",
+	"php.validate.executablePath": "/bin/php",
 
 	// Window zoom/scale
-	"window.zoomLevel": 0,
+	"window.zoomLevel": 1,
 
 	// Workbench style
 	"workbench.tree.indent": 20,
@@ -51,9 +55,6 @@
 
 	// Laravel Blade Snippets formatter @ext:onecentlin.laravel-blade
 	"blade.format.enable": true,
-
-	// Volar
-	"volar.inlayHints.eventArgumentInInlineHandlers": false,
 
 	// Format files
 	"[markdown]": {
@@ -100,13 +101,13 @@
 	},
 
 	"editor.codeActionsOnSave": {
-		"source.fixAll.markdownlint": true
+		"source.fixAll.markdownlint": "explicit"
 	},
 
 	// Laravel facades error
 	"intelephense.diagnostics.undefinedTypes": false,
 	"intelephense.diagnostics.undefinedMethods": false,
-	"intelephense.environment.phpVersion": "8.2.0",
+	"intelephense.environment.phpVersion": "8.1.6",
 	"workbench.startupEditor": "none",
 	"workbench.colorTheme": "Bearded Theme Oceanic",
 	"explorer.confirmDragAndDrop": false,
@@ -114,7 +115,5 @@
 	"files.associations": {
 		"*.env": "properties",
 		"*.env.*": "properties"
-	},
-
-	"vue.codeLens.enabled": false
+	}
 }

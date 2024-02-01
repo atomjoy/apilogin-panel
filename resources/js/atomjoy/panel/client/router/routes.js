@@ -12,6 +12,12 @@ const routes = [
 		name: 'client.panel',
 		redirect: { name: 'panel.profil' },
 	},
+	// redirect to client panel
+	{
+		path: '/panel',
+		name: 'panel',
+		redirect: { name: 'panel.profil' },
+	},
 	// admin panel dashboard
 	{
 		path: '/panel/dashboard',

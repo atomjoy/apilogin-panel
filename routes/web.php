@@ -22,17 +22,18 @@ use Atomjoy\Apilogin\Notifications\DbNotify;
 
 Route::get('/', function () {
 
-	$msg = new NotifyMessage();
-	$msg->setContent('Hello max your links from us.');
-	$msg->setLink('order', 'https://example.com/signup', 'Last Order');
-	$msg->setLink('promo', 'https://example.com/signin', 'Promotions');
+	// Add example notification for user
+	// $msg = new NotifyMessage();
+	// $msg->setContent('Hello max your links from us.');
+	// $msg->setLink('order', 'https://example.com/signup', 'Last Order');
+	// $msg->setLink('promo', 'https://example.com/signin', 'Promotions');
 
-	$msg1 = new NotifyMessage();
-	$msg1->setContent('Witaj! Twoja aplikacja została zaakceptowana. Zapraszamy na stronę sklepu.');
+	// $msg1 = new NotifyMessage();
+	// $msg1->setContent('Witaj! Twoja aplikacja została zaakceptowana. Zapraszamy na stronę sklepu.');
 
-	$user = User::first();
-	$user->notify(new DbNotify($msg));
-	$user->notifyNow(new DbNotify($msg1));
+	// $user = User::first();
+	// $user->notify(new DbNotify($msg));
+	// $user->notifyNow(new DbNotify($msg1));
 
 	return view('vue');
 });
