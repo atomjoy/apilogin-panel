@@ -59,7 +59,6 @@ export const useAuthStore = defineStore('auth', () => {
 
 	async function loginUser(data) {
 		try {
-			console.log('Login data', data)
 			let res = await axios.post('/web/api/login', data)
 			// F2a redirect
 			if (res?.data?.redirect != null) {
