@@ -29,9 +29,9 @@ function onSubmit(e) {
 
 	<form @submit.prevent="onSubmit" method="post" class="label-color">
 		<TitleH2 :title="$t('Change password')" />
-		<Password name="password_current" :label="$t('Current password')" v-model="password_current" />
-		<Password name="password" :label="$t('New password')" v-model="password" />
-		<Password name="password_confirmation" :label="$t('Confirm password')" v-model="password_confirmation" />
+		<Password name="password_current" :label="$t('Current password')" v-model="password_current" :placeholder="$t('Enter current password')" />
+		<Password name="password" :label="$t('New password')" v-model="password" :placeholder="$t('Enter new password')" />
+		<Password name="password_confirmation" :label="$t('Confirm password')" v-model="password_confirmation" :placeholder="$t('Enter new password again')" />
 		<Button :text="$t('Update')" />
 	</form>
 </template>

@@ -19,7 +19,7 @@ const open = ref(false)
 
 		<slot name="footer">
 			<div class="footer-links">
-				<RouterLink to="/admin/panel" class="link-admin-dashboard"> Go to admin panel </RouterLink>
+				<RouterLink to="/admin/panel" class="link-admin-dashboard"> {{ $t('Go to admin panel') }} </RouterLink>
 			</div>
 		</slot>
 	</div>

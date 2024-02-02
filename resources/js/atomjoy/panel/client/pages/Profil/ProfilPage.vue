@@ -46,10 +46,10 @@ function onSubmitDetails(e) {
 
 	<form @submit.prevent="onSubmitDetails" method="post" class="label-color">
 		<TitleH2 :title="$t('Details')" />
-		<Input name="name" :label="$t('Name')" v-model="user.profile.name" />
-		<Input name="username" :label="$t('Username')" v-model="user.profile.username" />
-		<Input name="location" :label="$t('Location')" v-model="user.profile.location" />
-		<Textarea name="bio" :label="$t('Bio')" v-model="user.profile.bio" />
+		<Input name="name" :label="$t('Name')" v-model="user.profile.name" :placeholder="$t('Enter name')" />
+		<Input name="username" :label="$t('Username')" v-model="user.profile.username" :placeholder="$t('Enter username')" />
+		<Input name="location" :label="$t('Location')" v-model="user.profile.location" :placeholder="$t('Enter location')" />
+		<Textarea name="bio" :label="$t('Bio')" v-model="user.profile.bio" :placeholder="$t('Enter bio')" />
 		<Button :text="$t('Update')" />
 	</form>
 </template>

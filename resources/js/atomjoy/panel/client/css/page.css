@@ -1,3 +1,8 @@
 .label-color .input-group label {
 	color: var(--label-primary) !important;
 }
+
+a:hover,
+button {
+	cursor: pointer !important;
+}

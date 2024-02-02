@@ -17,6 +17,8 @@ app.use(i18n)
 app.use(stores)
 app.use(router)
 
+console.log(lang)
+
 /*
 
 // Glogal variable provide/inject composition api

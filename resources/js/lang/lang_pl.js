@@ -1,3 +1,5 @@
+import account from '../atomjoy/panel/client/lang/account_pl.js'
+
 const pl = {
 	en: 'Angielski',
 	pl: 'Polski',
@@ -187,6 +189,7 @@ const pl = {
 	'Authenticated.': 'Zalogowany.',
 	'Unauthenticated.': 'Nie zalogowany.',
 	'Ups! Invalid data.': 'Ups! Błędne dane.',
+	...account,
 }
 
 export default pl

@@ -27,11 +27,11 @@ function onSubmitDetails(e) {
 
 	<form @submit.prevent="onSubmitDetails" method="post" class="label-color">
 		<TitleH2 :title="$t('Home address')" />
-		<Input name="country" :label="$t('Country')" v-model="user.address.country" />
-		<Input name="state" :label="$t('State')" v-model="user.address.state" />
-		<Input name="city" :label="$t('City')" v-model="user.address.city" />
-		<Input name="street" :label="$t('Street')" v-model="user.address.street" />
-		<Input name="postal_code" :label="$t('Postal code')" v-model="user.address.postal_code" />
+		<Input name="country" :label="$t('Country')" v-model="user.address.country" :placeholder="$t('Enter country')" />
+		<Input name="state" :label="$t('State')" v-model="user.address.state" :placeholder="$t('Enter state')" />
+		<Input name="city" :label="$t('City')" v-model="user.address.city" :placeholder="$t('Enter city')" />
+		<Input name="street" :label="$t('Street')" v-model="user.address.street" :placeholder="$t('Enter street')" />
+		<Input name="postal_code" :label="$t('Postal code')" v-model="user.address.postal_code" :placeholder="$t('Enter postal code')" />
 		<Button :text="$t('Update')" />
 	</form>
 </template>

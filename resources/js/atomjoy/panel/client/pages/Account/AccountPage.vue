@@ -10,7 +10,6 @@ import { onBeforeMount, ref } from 'vue'
 
 const auth = useAuthStore()
 let user = auth.getUser
-let password_current = ref('')
 
 onBeforeMount(() => {
 	auth.clearError()
@@ -39,7 +38,7 @@ function onSubmitF2a(e) {
 
 	<form @submit.prevent="onSubmitEmail" method="post" class="label-color">
 		<TitleH2 :title="$t('Change account email')" />
-		<Input name="email" :label="$t('Email address')" v-model="user.email" />
+		<Input name="email" :label="$t('Email address')" v-model="user.email" :placeholder="$t('Enter email address')" />
 		<Button :text="$t('Update')" />
 	</form>
 
@@ -47,7 +46,7 @@ function onSubmitF2a(e) {
 		<TitleH2 :title="$t('Two factor authentication')" />
 		<div v-if="user.f2a == 1" class="f2a-enabled">{{ $t('Enabled') }}</div>
 		<div v-if="user.f2a == 0" class="f2a-disabled">{{ $t('Disabled') }}</div>
-		<Password name="password_current" :label="$t('Current password')" v-model="password_current" />
+		<Password name="password_current" :label="$t('Current password')" :placeholder="$t('Enter current password')" />
 		<Button :text="$t('Update')" />
 	</form>
 </template>
