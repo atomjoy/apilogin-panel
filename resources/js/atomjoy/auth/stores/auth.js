@@ -84,6 +84,28 @@ export const useAuthStore = defineStore('auth', () => {
 		}
 	}
 
+	async function enableF2a(data) {
+		try {
+			let res = await axios.post('/web/api/f2a/enable', data)
+			setMessage(res)
+			user.value.f2a = 1
+		} catch (err) {
+			setError(err)
+			logError(err)
+		}
+	}
+
+	async function disableF2a(data) {
+		try {
+			let res = await axios.post('/web/api/f2a/disable', data)
+			setMessage(res)
+			user.value.f2a = 0
+		} catch (err) {
+			setError(err)
+			logError(err)
+		}
+	}
+
 	async function logoutUser() {
 		try {
 			await axios.get('/web/api/logout')
@@ -272,5 +294,7 @@ export const useAuthStore = defineStore('auth', () => {
 		getMessage,
 		getError,
 		getUser,
+		enableF2a,
+		disableF2a,
 	}
 })

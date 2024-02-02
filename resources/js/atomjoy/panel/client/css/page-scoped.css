@@ -5,3 +5,22 @@ form {
 	padding-bottom: 30px;
 	border-bottom: 1px dashed var(--divider-primary);
 }
+
+.f2a-enabled {
+	float: left;
+	width: 100%;
+	color: #5c5;
+	border: 1px solid #5c5;
+	font-weight: 900;
+	padding: 15px 20px;
+	border-radius: 10px;
+}
+.f2a-disabled {
+	float: left;
+	width: 100%;
+	color: #f23;
+	border: 1px solid #f23;
+	font-weight: 900;
+	padding: 15px 20px;
+	border-radius: 10px;
+}

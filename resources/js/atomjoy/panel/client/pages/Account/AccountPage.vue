@@ -1,29 +1,20 @@
 <script setup>
 import Input from '@/components/input/Input.vue'
 import Button from '@/components/input/Button.vue'
+import Password from '@/components/input/Password.vue'
 import TitleH1 from '@/atomjoy/panel/client/components/Titles/TitleH1.vue'
 import TitleH2 from '@/atomjoy/panel/client/components/Titles/TitleH2.vue'
 import ErrorMessage from '@/atomjoy/panel/client/components/Error/ErrorMessage.vue'
 import { useAuthStore } from '@/atomjoy/auth/stores/auth.js'
-import { onBeforeMount } from 'vue'
-import axios from 'axios'
+import { onBeforeMount, ref } from 'vue'
 
 const auth = useAuthStore()
-const user = auth.getUser
+let user = auth.getUser
+let password_current = ref('')
 
 onBeforeMount(() => {
 	auth.clearError()
 })
-
-async function enable() {
-	const { data } = await axios.get('/web/api/f2a/enable')
-	return data
-}
-
-async function disable() {
-	const { data } = await axios.get('/web/api/f2a/disable')
-	return data
-}
 
 function onSubmitEmail(e) {
 	auth.scrollTop()
@@ -31,24 +22,12 @@ function onSubmitEmail(e) {
 }
 
 function onSubmitF2a(e) {
-	try {
-		console.log(user.value.f2a)
+	auth.scrollTop()
 
-		if (user.value.f2a == 1) {
-			// Disable
-			disable().then((res) => {
-				user.value.f2a == 0
-				document.location.reload()
-			})
-		} else {
-			// Enable
-			enable().then((res) => {
-				user.value.f2a == 1
-				document.location.reload()
-			})
-		}
-	} catch (e) {
-		console.log(e)
+	if (user.value.f2a == 1) {
+		auth.disableF2a(new FormData(e.target))
+	} else {
+		auth.enableF2a(new FormData(e.target))
 	}
 }
 </script>
@@ -68,7 +47,8 @@ function onSubmitF2a(e) {
 		<TitleH2 :title="$t('Two factor authentication')" />
 		<div v-if="user.f2a == 1" class="f2a-enabled">{{ $t('Enabled') }}</div>
 		<div v-if="user.f2a == 0" class="f2a-disabled">{{ $t('Disabled') }}</div>
-		<Button :text="$t('Change')" />
+		<Password name="password_current" :label="$t('Current password')" v-model="password_current" />
+		<Button :text="$t('Update')" />
 	</form>
 </template>
 
@@ -78,22 +58,4 @@ function onSubmitF2a(e) {
 
 <style scoped>
 @import url('../../css/page-scoped.css');
-.f2a-enabled {
-	float: left;
-	width: 100%;
-	color: #fff;
-	background: #55cc55;
-	font-weight: 900;
-	padding: 15px 20px;
-	border-radius: 10px;
-}
-.f2a-disabled {
-	float: left;
-	width: 100%;
-	color: #fff;
-	background: #ff2200;
-	font-weight: 900;
-	padding: 15px 20px;
-	border-radius: 10px;
-}
 </style>
