@@ -30,6 +30,11 @@ if (props.avatar) {
 	avatar_path.value = avatar_default
 }
 
+function defImage(e) {
+	e.onerror = null
+	e.target.src = avatar_default
+}
+
 onMounted(() => {})
 </script>
 <template>
@@ -56,7 +61,7 @@ onMounted(() => {})
 				</div>
 
 				<div class="user-image">
-					<img :src="avatar_path" />
+					<img :src="avatar_path" @error="defImage" />
 					<div :class="{ 'open-icon': true, 'close-icon': open }"><ChevronIcon /></div>
 				</div>
 			</div>

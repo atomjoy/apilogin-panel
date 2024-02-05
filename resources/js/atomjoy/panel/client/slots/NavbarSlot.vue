@@ -3,6 +3,10 @@ import { ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import ChevronIcon from '@/atomjoy/icons/ChevronIcon.vue'
 import MenuIcon from '@/atomjoy/icons/MenuIcon.vue'
+import { useAuthStore } from '@/atomjoy/auth/stores/auth.js'
+
+const auth = useAuthStore()
+const user = auth.getUser
 const open = ref(false)
 </script>
 
@@ -19,7 +23,7 @@ const open = ref(false)
 
 		<slot name="footer">
 			<div class="footer-links">
-				<RouterLink to="/admin/panel" class="link-admin-dashboard"> {{ $t('Go to admin panel') }} </RouterLink>
+				<RouterLink v-if="user.is_admin" to="/admin/panel" class="link-admin-dashboard"> {{ $t('Go to admin panel') }} </RouterLink>
 			</div>
 		</slot>
 	</div>

@@ -23,7 +23,7 @@ const notify = useNotifyStore()
 		<ProfilMenu :logged="logged" :profil="true" :avatar="avatar_path" :name="user.name" :email="user.email" />
 		<div class="notify-box">
 			<ChangeTheme />
-			<AdminPanelButton :active="true" />
+			<AdminPanelButton v-if="user.is_admin" :active="false" />
 			<MessagesButton :active="message" @click="message = !message" />
 			<NotifyButton :active="notify.unread > 0" @click="notify.toggleOpen" />
 			<NotifyPanel />

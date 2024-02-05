@@ -5,9 +5,9 @@ import axios from 'axios'
 export const useNotifyStore = defineStore('notify', () => {
 	// State
 	const items = ref(new Map())
-	const page = ref(1)
-	const unread = ref(0)
-	const open = ref(false)
+	let page = ref(1)
+	let unread = ref(0)
+	let open = ref(false)
 
 	// Actions
 	function toggleOpen() {

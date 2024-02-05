@@ -20,10 +20,10 @@ const routes = [
 	},
 	// admin panel dashboard
 	{
-		path: '/panel/dashboard',
+		path: '/admin/dashboard',
 		name: 'admin.dashboard',
 		component: () => import('@/atomjoy/panel/admin/views/DashboardView.vue'),
-		meta: { requiresAuth: true },
+		meta: { requiresAuth: true, requiresAdmin: true },
 	},
 	// client panel profil
 	{

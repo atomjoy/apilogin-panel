@@ -48,6 +48,13 @@ router.beforeEach(async (to, from, next) => {
 	const auth = useAuthStore()
 	// ✅ Login with remember me token and/or check is user authenticated
 	await auth.isAuthenticated()
+	// Only admin route
+	if (to.meta.requiresAdmin) {
+		if (!auth.isLoggedIn.value || auth.getUser.value.is_admin != 1) {
+			// ✅ Redirect to login if not logged or not admin
+			next({ name: 'login' })
+		}
+	}
 	// ✅ Redirect to panel if logged
 	if (to.name == 'login' && auth.isLoggedIn.value) {
 		// Panel route name here: panel or client.panel
