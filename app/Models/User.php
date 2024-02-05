@@ -30,8 +30,9 @@ class User extends Authenticatable
 	/**
 	 * Append user relations (optional).
 	 */
-	// protected $with = ['profile', 'address'];
-	protected $with = ['profile', 'roles', 'roles_permissions'];
+	protected $with = [
+		'profile', 'address', 'roles', 'roles_permissions'
+	];
 
 	/**
 	 * The attributes that are mass assignable.
