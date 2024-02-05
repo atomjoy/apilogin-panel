@@ -52,7 +52,7 @@ router.beforeEach(async (to, from, next) => {
 	if (to.meta.requiresAdmin) {
 		if (!auth.isLoggedIn.value || auth.getUser.value.is_admin != 1) {
 			// ✅ Redirect to login if not logged or not admin
-			next({ name: 'login' })
+			next({ name: 'login', query: { redirected_from: to.fullPath } })
 		}
 	}
 	// ✅ Redirect to panel if logged
