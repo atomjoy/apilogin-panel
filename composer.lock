@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a0a42868076fcf8a01572d748b63c5c3",
+    "content-hash": "c11f7f07de8738219f44d10199d27ccd",
     "packages": [
         {
             "name": "atomjoy/apilogin",
