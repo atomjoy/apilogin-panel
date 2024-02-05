@@ -7,11 +7,61 @@ import TitleH1 from '@/atomjoy/panel/client/components/Titles/TitleH1.vue'
 import TitleH2 from '@/atomjoy/panel/client/components/Titles/TitleH2.vue'
 import ErrorMessage from '@/atomjoy/panel/client/components/Error/ErrorMessage.vue'
 import { useAuthStore } from '@/atomjoy/auth/stores/auth.js'
-import { onBeforeMount, ref } from 'vue'
+import { onBeforeMount, computed, ref } from 'vue'
 
 const auth = useAuthStore()
 const user = auth.getUser
-const avatar_path = ref(user.value.profile.avatar)
+
+let name = ref('')
+let username = ref('')
+let location = ref('')
+let bio = ref('')
+let avatar = ref('')
+
+let userName = computed({
+	get() {
+		return user.value?.profile?.name ?? ''
+	},
+	set(val) {
+		name.value = val
+	},
+})
+
+let userUsername = computed({
+	get() {
+		return user.value?.profile?.username ?? ''
+	},
+	set(val) {
+		username.value = val
+	},
+})
+
+let userLocation = computed({
+	get() {
+		return user.value?.profile?.location ?? ''
+	},
+	set(val) {
+		location.value = val
+	},
+})
+
+let userBio = computed({
+	get() {
+		return user.value?.profile?.bio ?? ''
+	},
+	set(val) {
+		bio.value = val
+	},
+})
+
+let userAvatar = computed({
+	get() {
+		return user.value?.profile?.avatar ?? ''
+	},
+	set(val) {
+		avatar.value = val
+	},
+})
 
 onBeforeMount(() => {
 	auth.clearError()
@@ -40,16 +90,16 @@ function onSubmitDetails(e) {
 
 	<form @submit.prevent="onSubmitAvatar" method="post" enctype="multipart/form-data" class="label-color">
 		<TitleH2 :title="$t('Avatar')" />
-		<AvatarInput :label="$t('Select image')" :avatar="avatar_path" />
+		<AvatarInput :label="$t('Select image')" :avatar="userAvatar" />
 		<Button :text="$t('Update')" />
 	</form>
 
 	<form @submit.prevent="onSubmitDetails" method="post" class="label-color">
 		<TitleH2 :title="$t('Details')" />
-		<Input name="name" :label="$t('Name')" v-model="user.profile.name" :placeholder="$t('Enter name')" />
-		<Input name="username" :label="$t('Username')" v-model="user.profile.username" :placeholder="$t('Enter username')" />
-		<Input name="location" :label="$t('Location')" v-model="user.profile.location" :placeholder="$t('Enter location')" />
-		<Textarea name="bio" :label="$t('Bio')" v-model="user.profile.bio" :placeholder="$t('Enter bio')" />
+		<Input name="name" :label="$t('Name')" v-model="userName" :placeholder="$t('Enter name')" />
+		<Input name="username" :label="$t('Username')" v-model="userUsername" :placeholder="$t('Enter username')" />
+		<Input name="location" :label="$t('Location')" v-model="userLocation" :placeholder="$t('Enter location')" />
+		<Textarea name="bio" :label="$t('Bio')" v-model="userBio" :placeholder="$t('Enter bio')" />
 		<Button :text="$t('Update')" />
 	</form>
 </template>
