@@ -8,15 +8,30 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Atomjoy\Apilogin\Contracts\HasProfilAddress;
+use Atomjoy\Apilogin\Contracts\HasRolesPermissions;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
 	use HasApiTokens, HasFactory, Notifiable, HasProfilAddress;
+	use HasRolesPermissions;
+	use HasRoles;
+
+	/**
+	 * Model table.
+	 */
+	protected $table = 'users';
+
+	/**
+	 * Auth guard.
+	 */
+	protected $guard = 'web';
 
 	/**
 	 * Append user relations (optional).
 	 */
-	protected $with = ['profile', 'address'];
+	// protected $with = ['profile', 'address'];
+	protected $with = ['profile', 'roles'];
 
 	/**
 	 * The attributes that are mass assignable.
