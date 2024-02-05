@@ -5,7 +5,7 @@ Vue3 minimal client panel with Laravel backend rest api (client profil, address,
 ## Install
 
 - Set the database and smtp server credentials in the .env configuration file.
-- Set settings from [atomjoy/apilogin](https://github.com/atomjoy/apilogin) if somthing went wrong.
+- Set settings from [atomjoy/apilogin](https://github.com/atomjoy/apilogin) README.md if somthing went wrong.
 
 ```sh
 # notifications, storage
