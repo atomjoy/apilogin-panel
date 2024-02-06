@@ -25,7 +25,13 @@ const { open } = toRefs(props)
 const avatar_path = ref(null)
 
 if (props.avatar) {
-	avatar_path.value = '/storage/' + props.avatar
+	let reg = new RegExp('^(http|https)://', 'i')
+
+	if (reg.test(props.avatar)) {
+		avatar_path.value = props.avatar
+	} else {
+		avatar_path.value = '/storage/' + props.avatar
+	}
 } else {
 	avatar_path.value = avatar_default
 }
