@@ -28,6 +28,11 @@ if (props.avatar) {
 	avatar_path.value = avatar_default
 }
 
+function defImage(e) {
+	e.onerror = null
+	e.target.src = avatar_default
+}
+
 function getImagePath(e) {
 	const path = URL.createObjectURL(e.target.files[0])
 	if (path) {
@@ -59,7 +64,7 @@ async function removeAvatar() {
 				</svg>
 			</div>
 
-			<img :src="avatar_path" class="avatar-image" />
+			<img :src="avatar_path" class="avatar-image" @error="defImage" />
 
 			<Input @change="getImagePath" :label="props.label" name="avatar" type="file" />
 		</div>

@@ -31,7 +31,7 @@ let userName = computed({
 
 let userEmail = computed({
 	get() {
-		return user.value?.profile?.email ?? 'invalid@email'
+		return user.value?.email ?? 'invalid@email'
 	},
 	set(val) {
 		email.value = val
