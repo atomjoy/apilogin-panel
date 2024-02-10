@@ -26,6 +26,91 @@ export const useAuthStore = defineStore('auth', () => {
 		}
 	}
 
+	// Admin
+	async function isAuthenticatedAdmin() {
+		try {
+			let res = await axios.get('/web/api/admin/logged')
+			setAuth(res, false)
+			console.log('Admin logged')
+		} catch (err) {
+			delAuth(err)
+			logError(err)
+		}
+	}
+
+	async function logoutUserAdmin() {
+		try {
+			await axios.get('/web/api/admin/logout')
+			user.value = null
+			loggedIn.value = false
+			error.value = false
+			message.value = ''
+			router.push('/admin/login')
+		} catch (err) {
+			logError(err)
+		}
+	}
+
+	async function loginUserAdmin(data) {
+		try {
+			let res = await axios.post('/web/api/admin/login', data)
+			// F2a redirect
+			if (res?.data?.redirect != null) {
+				router.push(res?.data?.redirect) // redirection url
+			}
+			// Just login
+			setAuth(res)
+			router.push('/admin/panel') // redirection url
+		} catch (err) {
+			delAuth(err)
+			logError(err)
+		}
+	}
+
+	async function resetUserPasswordAdmin(data) {
+		try {
+			let res = await axios.post('/web/api/admin/password', data)
+			setMessage(res)
+		} catch (err) {
+			setError(err)
+			logError(err)
+		}
+	}
+
+	async function loginUserF2aAdmin(data) {
+		try {
+			let res = await axios.post('/web/api/admin/f2a', data)
+			setAuth(res)
+			router.push('/admin/panel') // redirection url
+		} catch (err) {
+			delAuth(err)
+			logError(err)
+		}
+	}
+
+	async function enableF2aAdmin(data) {
+		try {
+			let res = await axios.post('/web/api/admin/f2a/enable', data)
+			setMessage(res)
+			user.value.f2a = 1
+		} catch (err) {
+			setError(err)
+			logError(err)
+		}
+	}
+
+	async function disableF2aAdmin(data) {
+		try {
+			let res = await axios.post('/web/api/admin/f2a/disable', data)
+			setMessage(res)
+			user.value.f2a = 0
+		} catch (err) {
+			setError(err)
+			logError(err)
+		}
+	}
+
+	// User
 	async function isAuthenticated() {
 		try {
 			let res = await axios.get('/web/api/logged')
@@ -273,13 +358,18 @@ export const useAuthStore = defineStore('auth', () => {
 	return {
 		changeLocale,
 		isAuthenticated,
+		isAuthenticatedAdmin,
 		registerUser,
 		activateUser,
 		loginUser,
+		loginUserAdmin,
 		loginUserF2a,
+		loginUserF2aAdmin,
 		logoutUser,
+		logoutUserAdmin,
 		changeUserPassword,
 		resetUserPassword,
+		resetUserPasswordAdmin,
 		changeUserEmail,
 		confirmUserEmail,
 		changeUserAddress,
@@ -296,5 +386,7 @@ export const useAuthStore = defineStore('auth', () => {
 		getUser,
 		enableF2a,
 		disableF2a,
+		enableF2aAdmin,
+		disableF2aAdmin,
 	}
 })

@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c7df6e881ea771a80840917dc726e10",
+    "content-hash": "3e6291662d21a46167418a622797bd46",
     "packages": [
         {
             "name": "atomjoy/apilogin",
-            "version": "v4.4.9",
+            "version": "v5.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/atomjoy/apilogin.git",
-                "reference": "b4f98db05fdda9c2204b5616c83d15e3905530e8"
+                "reference": "362495f6e5ea07e6bd5b5ffc432022776dc6d9a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/atomjoy/apilogin/zipball/b4f98db05fdda9c2204b5616c83d15e3905530e8",
-                "reference": "b4f98db05fdda9c2204b5616c83d15e3905530e8",
+                "url": "https://api.github.com/repos/atomjoy/apilogin/zipball/362495f6e5ea07e6bd5b5ffc432022776dc6d9a8",
+                "reference": "362495f6e5ea07e6bd5b5ffc432022776dc6d9a8",
                 "shasum": ""
             },
             "require": {
@@ -58,9 +58,9 @@
             "description": "Laravel api authentication library.",
             "support": {
                 "issues": "https://github.com/atomjoy/apilogin/issues",
-                "source": "https://github.com/atomjoy/apilogin/tree/v4.4.9"
+                "source": "https://github.com/atomjoy/apilogin/tree/v5.0.4"
             },
-            "time": "2024-02-05T18:31:08+00:00"
+            "time": "2024-02-10T14:08:59+00:00"
         },
         {
             "name": "atomjoy/proton",
@@ -8089,16 +8089,16 @@
         },
         {
             "name": "spatie/laravel-ignition",
-            "version": "2.4.1",
+            "version": "2.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-ignition.git",
-                "reference": "005e1e7b1232f3b22d7e7be3f602693efc7dba67"
+                "reference": "351504f4570e32908839fc5a2dc53bf77d02f85e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/005e1e7b1232f3b22d7e7be3f602693efc7dba67",
-                "reference": "005e1e7b1232f3b22d7e7be3f602693efc7dba67",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/351504f4570e32908839fc5a2dc53bf77d02f85e",
+                "reference": "351504f4570e32908839fc5a2dc53bf77d02f85e",
                 "shasum": ""
             },
             "require": {
@@ -8177,7 +8177,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-01-12T13:14:58+00:00"
+            "time": "2024-02-09T16:08:40+00:00"
         },
         {
             "name": "symfony/yaml",

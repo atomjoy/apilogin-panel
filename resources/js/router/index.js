@@ -47,24 +47,45 @@ router.beforeEach(async (to, from, next) => {
 	// ✅ This will work make sure the correct store is used for the current running app
 	const auth = useAuthStore()
 	// ✅ Login with remember me token and/or check is user authenticated
-	await auth.isAuthenticated()
-	// Only admin route
+	if (to.meta.adminRoute) {
+		await auth.isAuthenticatedAdmin()
+	} else {
+		await auth.isAuthenticated()
+	}
+	// If admin route not authenticated
 	if (to.meta.requiresAdmin) {
 		if (!auth.isLoggedIn.value || auth.getUser.value.is_admin != 1) {
 			// ✅ Redirect to login if not logged or not admin
-			next({ name: 'login', query: { redirected_from: to.fullPath } })
+			next({ name: 'admin.login', query: { redirected_from: to.fullPath } })
 		}
 	}
-	// ✅ Redirect to panel if logged
-	if (to.name == 'login' && auth.isLoggedIn.value) {
-		// Panel route name here: panel or client.panel
-		next({ name: 'panel' })
-	} else if (to.meta.requiresAuth && !auth.isLoggedIn.value) {
-		// ✅ Redirect to login if not logged
-		next({ name: 'login', query: { redirected_from: to.fullPath } })
+	// Routes
+	if (to.meta.adminRoute) {
+		// Admin routes
+		// ✅ Redirect to admin panel if logged
+		if (to.name == 'admin.login' && auth.isLoggedIn.value) {
+			// Panel route name here: panel or client.panel
+			next({ name: 'admin.panel' })
+		} else if (to.meta.requiresAuth && !auth.isLoggedIn.value) {
+			// ✅ Redirect to login if not logged
+			next({ name: 'admin.login', query: { redirected_from: to.fullPath } })
+		} else {
+			// ✅ Continue
+			next()
+		}
 	} else {
-		// ✅ Continue
-		next()
+		// User routes
+		// ✅ Redirect to panel if logged
+		if (to.name == 'login' && auth.isLoggedIn.value) {
+			// Panel route name here: panel or client.panel
+			next({ name: 'panel' })
+		} else if (to.meta.requiresAuth && !auth.isLoggedIn.value) {
+			// ✅ Redirect to login if not logged
+			next({ name: 'login', query: { redirected_from: to.fullPath } })
+		} else {
+			// ✅ Continue
+			next()
+		}
 	}
 })
 
