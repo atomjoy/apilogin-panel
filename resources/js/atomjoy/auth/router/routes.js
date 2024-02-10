@@ -25,6 +25,7 @@ const routes = [
 		path: '/logout',
 		name: 'logout',
 		component: () => import('@/atomjoy/auth/LogoutView.vue'),
+		meta: { requiresAuth: true },
 	},
 	// Two factor
 	{
@@ -53,13 +54,6 @@ const routes = [
 		component: () => import('@/atomjoy/auth/AdminLoginView.vue'),
 		meta: { adminRoute: true },
 	},
-	// Admin logout
-	{
-		path: '/admin/logout',
-		name: 'admin.logout',
-		component: () => import('@/atomjoy/auth/AdminLogoutView.vue'),
-		meta: { adminRoute: true },
-	},
 	// Admin Two factor
 	{
 		path: '/admin/login/f2a/:hash',
@@ -73,6 +67,13 @@ const routes = [
 		name: 'admin.password',
 		component: () => import('@/atomjoy/auth/AdminPasswordView.vue'),
 		meta: { adminRoute: true },
+	},
+	// Admin logout
+	{
+		path: '/admin/logout',
+		name: 'admin.logout',
+		component: () => import('@/atomjoy/auth/AdminLogoutView.vue'),
+		meta: { adminRoute: true, requiresAdmin: true },
 	},
 ]
 
