@@ -5,21 +5,21 @@ const routes = [
 		path: '/admin/panel',
 		name: 'admin.panel',
 		redirect: { name: 'admin.dashboard' },
-		meta: { requiresAuth: false, requiresAdmin: false, adminRoute: true },
+		meta: { requiresAdmin: true, adminRoute: true },
 	},
 	// admin panel dashboard
 	{
 		path: '/admin/dashboard',
 		name: 'admin.dashboard',
 		component: () => import('@/atomjoy/panel/admin/views/DashboardView.vue'),
-		meta: { requiresAuth: true, requiresAdmin: true, adminRoute: true },
+		meta: { requiresAdmin: true, adminRoute: true },
 	},
 	// admin panel orders
 	{
 		path: '/admin/orders',
 		name: 'admin.orders',
 		component: () => import('@/atomjoy/panel/admin/views/OrdersView.vue'),
-		meta: { requiresAuth: true, requiresAdmin: true, adminRoute: true },
+		meta: { requiresAdmin: true, adminRoute: true },
 	},
 	// redirect to client panel
 	{
