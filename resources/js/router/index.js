@@ -47,7 +47,7 @@ router.beforeEach(async (to, from, next) => {
 	// ✅ This will work make sure the correct store is used for the current running app
 	const auth = useAuthStore()
 	// ✅ Login with remember me token and/or check is user authenticated
-	if (to.meta.adminRoute) {
+	if (to.meta.requiresAdmin) {
 		await auth.isAuthenticatedAdmin()
 	} else {
 		await auth.isAuthenticated()

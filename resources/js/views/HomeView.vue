@@ -16,6 +16,7 @@ let name = ref('Ala')
 
 <template>
 	<PageTitle :title="'page.Home'" />
+
 	<TopMenu />
 
 	<h1>{{ $t('page.Home') }}</h1>

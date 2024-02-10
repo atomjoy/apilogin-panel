@@ -18,7 +18,7 @@ const user = auth.getUser
 		<div class="right">
 			<ChangeLocale />
 			<ChangeTheme />
-			<ProfilMenu :logged="logged" :profil="true" :name="user?.name" :email="user?.email" :avatar="user?.profile?.avatar" />
+			<ProfilMenu :logged="logged" :profil="true" :name="user?.profile?.name" :email="user?.email" :avatar="user?.profile?.avatar" />
 		</div>
 	</div>
 </template>
