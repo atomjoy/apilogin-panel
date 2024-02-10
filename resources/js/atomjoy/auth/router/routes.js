@@ -51,28 +51,28 @@ const routes = [
 		path: '/admin/login',
 		name: 'admin.login',
 		component: () => import('@/atomjoy/auth/AdminLoginView.vue'),
-		meta: { requiresAuth: false, adminRoute: true },
+		meta: { requiresAuth: false, requiresAdmin: false, adminRoute: true },
 	},
 	// Admin logout
 	{
 		path: '/admin/logout',
 		name: 'admin.logout',
 		component: () => import('@/atomjoy/auth/AdminLogoutView.vue'),
-		meta: { requiresAuth: true, adminRoute: true },
+		meta: { requiresAuth: false, requiresAdmin: false, adminRoute: true },
 	},
 	// Admin Two factor
 	{
 		path: '/admin/login/f2a/:hash',
 		name: 'admin.login.f2a',
 		component: () => import('@/atomjoy/auth/AdminLoginF2aView.vue'),
-		meta: { requiresAuth: false, adminRoute: true },
+		meta: { requiresAuth: false, requiresAdmin: false, adminRoute: true },
 	},
 	// Admin password
 	{
 		path: '/admin/password',
 		name: 'admin.password',
 		component: () => import('@/atomjoy/auth/AdminPasswordView.vue'),
-		meta: { requiresAuth: false, adminRoute: true },
+		meta: { requiresAuth: false, requiresAdmin: false, adminRoute: true },
 	},
 ]
 
