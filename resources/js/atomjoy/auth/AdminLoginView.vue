@@ -43,9 +43,7 @@ function onSubmit(e) {
 			</div>
 			<div class="form-wraper">
 				<form @submit.prevent="onSubmit" class="form-auth">
-					<h1 class="full">
-						{{ $t('login.Sign_In') }}
-					</h1>
+					<h1 class="full">{{ $t('login.Sign_In') }} {{ $t('login.Admin', 'Admin') }}</h1>
 
 					<div v-if="store.getMessage.value != null" :class="[store.getError.value ? 'alert-error' : 'alert-info', 'animate__animated animate__flipInX']">{{ store.getMessage.value }}</div>
 

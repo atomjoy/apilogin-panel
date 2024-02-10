@@ -66,7 +66,7 @@ router.beforeEach(async (to, from, next) => {
 		if (to.name == 'admin.login' && auth.isLoggedIn.value) {
 			// Panel route name here: panel or client.panel
 			next({ name: 'admin.panel' })
-		} else if (to.meta.requiresAuth && !auth.isLoggedIn.value) {
+		} else if (to.meta.requiresAdmin && !auth.isLoggedIn.value) {
 			// ✅ Redirect to login if not logged
 			next({ name: 'admin.login', query: { redirected_from: to.fullPath } })
 		} else {
