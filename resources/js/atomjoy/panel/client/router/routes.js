@@ -5,7 +5,7 @@ const routes = [
 		path: '/admin/panel',
 		name: 'admin.panel',
 		redirect: { name: 'admin.dashboard' },
-		meta: { requiresAuth: true, requiresAdmin: true, adminRoute: true },
+		meta: { requiresAuth: false, requiresAdmin: false, adminRoute: true },
 	},
 	// admin panel dashboard
 	{
