@@ -3,8 +3,8 @@ import { RouterLink } from 'vue-router'
 </script>
 
 <template>
-	<div><b>Admin Dashboard</b></div>
-	<RouterLink to="/admin/orders" class="link">Admin Orders</RouterLink>
+	<div><b>Admin Orders</b></div>
+	<RouterLink to="/admin/panel" class="link">Admin Dashboard</RouterLink>
 	<RouterLink to="/admin/logout" class="link">Logout Admin</RouterLink>
 </template>
 

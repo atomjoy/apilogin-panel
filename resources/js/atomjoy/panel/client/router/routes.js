@@ -14,6 +14,13 @@ const routes = [
 		component: () => import('@/atomjoy/panel/admin/views/DashboardView.vue'),
 		meta: { requiresAuth: true, requiresAdmin: true, adminRoute: true },
 	},
+	// admin panel orders
+	{
+		path: '/admin/orders',
+		name: 'admin.orders',
+		component: () => import('@/atomjoy/panel/admin/views/OrdersView.vue'),
+		meta: { requiresAuth: true, requiresAdmin: true, adminRoute: true },
+	},
 	// redirect to client panel
 	{
 		path: '/client/panel',
