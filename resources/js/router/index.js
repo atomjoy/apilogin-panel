@@ -4,8 +4,10 @@ import HomeView from '@/views/HomeView.vue'
 
 // Login
 import authRoutes from '@/atomjoy/auth/router/routes.js'
-// Panel
+// Client
 import panelClientRoutes from '@/atomjoy/panel/client/router/routes.js'
+// Admin
+import panelAdminRoutes from '@/atomjoy/panel/admin/router/routes.js'
 // Input
 import InputDemo from '@/components/input/example/DemoPageView.vue'
 
@@ -15,8 +17,10 @@ const router = createRouter({
 	routes: [
 		// Auth, login, register, logout, ...
 		...authRoutes,
-		// Panel, profil, account ...
+		// Client routes
 		...panelClientRoutes,
+		// Admin routes
+		...panelAdminRoutes,
 		// Demo Page
 		{
 			path: '/demo/input',

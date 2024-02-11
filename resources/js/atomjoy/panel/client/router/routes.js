@@ -1,26 +1,5 @@
-// Panel
+// Client
 const routes = [
-	// redirect to admin dashboard
-	{
-		path: '/admin/panel',
-		name: 'admin.panel',
-		redirect: { name: 'admin.dashboard' },
-		meta: { requiresAdmin: true, adminRoute: true },
-	},
-	// admin panel dashboard
-	{
-		path: '/admin/dashboard',
-		name: 'admin.dashboard',
-		component: () => import('@/atomjoy/panel/admin/views/DashboardView.vue'),
-		meta: { requiresAdmin: true, adminRoute: true },
-	},
-	// admin panel orders
-	{
-		path: '/admin/orders',
-		name: 'admin.orders',
-		component: () => import('@/atomjoy/panel/admin/views/OrdersView.vue'),
-		meta: { requiresAdmin: true, adminRoute: true },
-	},
 	// redirect to client panel
 	{
 		path: '/client/panel',
